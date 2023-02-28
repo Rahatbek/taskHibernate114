@@ -23,7 +23,6 @@ public class UserDaoHibernateImpl implements UserDao {
             NativeQuery sqlQuery = session.createSQLQuery(sql);
             sqlQuery.executeUpdate();
             session.getTransaction().commit();
-            System.out.println("when create table: " + sqlQuery);
         } catch (HibernateException e) {
             e.printStackTrace();
         }
@@ -38,7 +37,6 @@ public class UserDaoHibernateImpl implements UserDao {
             NativeQuery sqlQuery = session.createSQLQuery(sql);
             sqlQuery.executeUpdate();
             session.getTransaction().commit();
-            System.out.println("when drop table: " + sqlQuery);
         } catch (HibernateException e) {
             e.printStackTrace();
         }
@@ -56,7 +54,6 @@ public class UserDaoHibernateImpl implements UserDao {
             insertsqlQuery.setParameter(3, age);
             insertsqlQuery.executeUpdate();
             session.getTransaction().commit();
-            System.out.println("inserted");
         } catch (HibernateException e) {
             e.printStackTrace();
         }
@@ -72,7 +69,6 @@ public class UserDaoHibernateImpl implements UserDao {
             insertsqlQuery.setParameter(1, id);
             insertsqlQuery.executeUpdate();
             session.getTransaction().commit();
-            System.out.println("deleted");
         } catch (HibernateException e) {
             e.printStackTrace();
         }
@@ -110,7 +106,6 @@ public class UserDaoHibernateImpl implements UserDao {
             NativeQuery sqlQuery = session.createSQLQuery(sql);
             sqlQuery.executeUpdate();
             session.getTransaction().commit();
-            System.out.println("deleted table: " + sqlQuery);
         } catch (HibernateException e) {
             e.printStackTrace();
         }
